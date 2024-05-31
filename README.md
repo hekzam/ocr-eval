@@ -70,3 +70,48 @@ Les arguments ont des valeurs par défaut qui peuvent ne pas être cohérentes a
 ### Keras
 
 ### Generate Plots
+
+La version de python utilisée ici pour le programme est la `3.11.2`, mais la version de python ne devrait pas poser de problème si elle est équivalente ou plus récente.
+Voici les dépendances de ce programme :
+```python
+import argparse
+import os
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+from sklearn.metrics import confusion_matrix, classification_report, roc_curve, auc
+from sklearn.preprocessing import label_binarize
+from sklearn.multiclass import OneVsRestClassifier
+from sklearn.svm import SVC
+```
+Ce programme propose une option d'aide en entrant la commande `python generate_plots.py -h`. Voici ce qu'affiche la commande et un détail des différentes options ci-dessous.
+
+```
+usage: generate_plots.py [-h] --file FILE --output OUTPUT [--mode {confusion,distribution,report,roc,norm_confusion,all}] [--title TITLE]
+                         [--color {Reds,Blues,Greens,Yellows}] [--filtered]
+
+options:
+  -h, --help            show this help message and exit
+  --file FILE           CSV file to plot.
+  --output OUTPUT       Output file path.
+  --mode {confusion,distribution,report,roc,norm_confusion,all}
+  --title TITLE         Title of the plot to create
+  --color {Reds,Blues,Greens,Yellows}
+  --filtered            Filter non-digits values
+```
+
+Les arguments obligatoires sont :
+- `--file` fichier source (attendu au format .csv ou équivalent) à traiter pour produire le plot sélectionné
+- `--output` fichier OU nom de répertoire pour le(s) fichier(s) en sortie
+
+Les arguments optionnels sont :
+- `--mode` choix possible parmi les suivants
+	- *confusion* : matrice de confusion
+   	- *distribution* : histogramme de distribution des valeurs attendues et prédites
+   	- *report* : rapport de classification contenant la précision, le rappel, et le F1 score
+   	- *roc* : courbe ROC et calcul de l'AUC pour chaque classe prédite (peu intéréssant dans le cas des modèles actuels)
+   	- *norm_confusion* : matrice de confusion normalisée (colorimétrie identique mais valeurs plus 'lisibles')
+   	- *all* : produit l'ensemble des plots cités plus haut. Attention, dans ce mode le paramètre `--output` est utilisé comme nom de dossier !
+- `--title` titre du graphique (inutile en cas de choix du mode all)
+- `--color` nuancier de couleur (pour les plots qui acceptent les variations de couleurs)
+- `--filtered` données filtrées ou non. Dans tout les cas, les données sont triées comme un chiffre ou comme 'other'. Si le mode filtered est activé, on choisira le premier chiffre proposé pour chaque prédiction, sinon on prendra 'other'
