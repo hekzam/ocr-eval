@@ -1,4 +1,4 @@
-# OCR Eval - BE 2024
+# README - OCR Eval - BE 2024
 
 ## A propos
 
