@@ -30,7 +30,26 @@ Commencez par cloner ce dépôt dans le répertoire de votre choix avec `git clo
 ### Tesseract
 
 Placez vous dans le répertoire `src/tesseract`.
-Suivez ensuite les instructions d'installation disponible à [cette adresse](https://github.com/tesseract-ocr/tesseract). Veillez à bien cloner le dépot et installer from source pour avoir la version ``
+Suivez ensuite les instructions d'installation disponible à [cette adresse](https://github.com/tesseract-ocr/tesseract). Veillez à bien cloner le dépot et installer from source pour avoir la version `tesseract 5.3.4-49-g577e8` (en réalité il n'est pas nécéssaire d'avoir cette version spécifique, même si cela limitera le risque de bugs. Vous pouvez installer une autre version du moment qu'elle est en `5.x.x`).
+
+Une fois l'installation terminée, allez dans le répertoire `src/tesseract/tesseract/tessdata` et copiez y les fichiers **.traineddata** contenu dans le répertoire `src/tesseract`. Enfin, revenez dans ce répertoire.
+
+Enfin, compilez le programme avec la commande suivante : **`g++ ocr_prediction.cpp -o ocr_prediction pkg-config --cflags --libs tesseract lept`**. Les dépendances sont normalement installées lors de l'installation de tesseract, mais au besoin vous pouvez les installer manuellement avec apt par exemple. En entrant la commande `tesseract --version` vous devriez avoir quelque chose de similaire à ça :
+
+```
+tesseract 5.3.4-49-g577e8
+ leptonica-1.82.0
+  libgif 5.2.1 : libjpeg 6b (libjpeg-turbo 2.1.2) : libpng 1.6.39 : libtiff 4.5.0 : zlib 1.2.13 : libwebp 1.2.4 : libopenjp2 2.5.0
+ Found AVX2
+ Found AVX
+ Found FMA
+ Found SSE4.1
+ Found OpenMP 201511
+ Found libarchive 3.6.2 zlib/1.2.13 liblzma/5.4.0 bz2lib/1.0.8 liblz4/1.9.4 libzstd/1.5.2
+ Found libcurl/7.88.1 NSS/3.87.1 zlib/1.2.13 brotli/1.0.9 zstd/1.5.4 libidn2/2.3.3 libpsl/0.21.2 (+libidn2/2.3.3) libssh2/1.10.0 nghttp2/1.52.0 librtmp/2.3 OpenLDAP/2.5.13
+```
+
+Vous pouvez maintenant vous rendre dans la section **Utilisation des programmes** pour utiliser le programme tesseract modifié.
 
 ### SimpleHTR
 
