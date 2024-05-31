@@ -41,6 +41,9 @@ Une fois que vous avez suivi les instructions d'installation, copiez le fichier 
 Vous pouvez maintenant vous rendre dans la section **Utilisation des programmes** pour utiliser le programme SimpleHTR modifié.
 
 ### Keras
+Suivre les instructions d'installation de [cette adresse](https://keras.io/getting_started/) ou la commande `pip install --upgrade keras`
+
+**/!\ Attention** Keras est dépendant de Tensorflow il faut l'avoir installé sur votre machine pour utiliser Keras, [lien des instructions d'installation](https://www.tensorflow.org/install?hl=fr)
 
 ## Utilisation des programmes
 
@@ -68,6 +71,17 @@ Les arguments sont interchangeables car le programme utilise la librairie *argpa
 Les arguments ont des valeurs par défaut qui peuvent ne pas être cohérentes avec votre arborescence. **Par sécurité**, renseignez une valeur pour l'ensemble de ces arguments.
 
 ### Keras
+
+Le programme prend 3 parametre obligatoire et 1 optionel : 
+**`python keras_outcsv.py <fichier liste des chemins> <fichier des labels> <nom fichier csv> <(optionel) nom de model>`**
+
+Les arguments : 
+- **fichier_liste_des_chemins** : le chemin d'accès vers le fichier contenant l'ensemble des chemins d'accès des images du test
+- **fichier_des_labels** : le chemin d'accès vers le fichier contenant l'ensemble des étiquettes (labels) du test
+- **nom_fichier_csv** : le chemin d'accès vers le fichier de sortie
+- **nom_de_model** : (optionel) le chemin du model qui doit réaliser les prédictions
+
+**nom_de_model** a par défaut un chemin qui peut ne pas être cohérente avec votre arborescence : *model.h5*
 
 ### Generate Plots
 
