@@ -29,6 +29,9 @@ Commencez par cloner ce dépôt dans le répertoire de votre choix avec `git clo
 
 ### Tesseract
 
+Placez vous dans le répertoire `src/tesseract`.
+Suivez ensuite les instructions d'installation disponible à [cette adresse](https://github.com/tesseract-ocr/tesseract). Veillez à bien cloner le dépot et installer from source pour avoir la version ``
+
 ### SimpleHTR
 
 Placez vous dans le répertoire `src/simple-htr`.
