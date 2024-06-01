@@ -68,6 +68,8 @@ Suivre les instructions d'installation de [cette adresse](https://keras.io/getti
 
 **/!\ Attention** Keras est dépendant de Tensorflow il faut l'avoir installé sur votre machine pour utiliser Keras, [lien des instructions d'installation](https://www.tensorflow.org/install?hl=fr)
 
+Vous pouvez maintenant vous rendre dans la section **Utilisation des programmes** pour utiliser le programme Keras modifié.
+
 ## Utilisation des programmes
 
 Les programmes Tesseract, SimpleHTR et Keras prennent 3 paramètres en entrée au minimum, à savoir :
