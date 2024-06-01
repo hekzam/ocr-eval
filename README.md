@@ -16,6 +16,7 @@ Ce dépôt contient l'ensemble des fichiers sources créés dans le cadre de l'U
 	- **simple-htr** : sources utiles pour l'automatisation de SimpleHTR (python)
 	- **keras** : sources utiles pour l'automatisation de Keras (python)
 	- **csv** : sources utilisées pour obtenir les graphiques à partir des fichiers csv
+   	- **prep** : sources pour le preprocessing des fichiers/des images
 - **resources** : dossiers d'images et fichiers de paths/labels
 	- **custom** : images issues des données manuscrites remplies par les contributeurs
 	- **mnist** : images issues du jeu de donnée MNIST de Yann Le Cun
@@ -75,6 +76,24 @@ Les programmes Tesseract, SimpleHTR et Keras prennent 3 paramètres en entrée a
 - chemin d'accès du fichier de sortie (sortie de type csv, **fortement conseillé** de mettre le nom du fichier en .csv)
 
 ### Preprocessing
+
+Il y a deux programmes de pre-processing dans le répertoire `src/prep`.
+
+Le premier, `preprocessing.py`, est fixe et a permi de créer le jeu de données personnalisées que vous pouvez trouver dans le répertoire `resources/custom`. L'intérêt premier de ce programme est de pouvoir le consulter pour connaître les réglages et les fonctions de la librairie **OpenCV** utilisées.
+
+Le second, `generate_paths.py`, permet de générer le fichier des chemins d'accès des images dynamiquement. Voici l'affichage de l'aide (avec la commande `python generate_paths.py -h`) ainsi qu'un détail sur les arguments :
+```
+usage: generate_paths.py [-h] [--path PATH] --output OUTPUT [--mode {custom,mnist}]
+
+options:
+  -h, --help            show this help message and exit
+  --path PATH           Prefix path to add to filenames
+  --output OUTPUT       Output file for paths.
+  --mode {custom,mnist}
+```
+- **path** : éventuel arborescence d'accès aux images. Par défaut, si rien n'est spécifié, l'arborescence sera `nom_jeu_donnee/nom_image.png` pour chaque image.
+- **output** : nom du fichier de sortie.
+- **mode** : jeu de données sur lequel se baser pour formuler les noms des images .Par défaut *custom*.
 
 ### Tesseract
 
