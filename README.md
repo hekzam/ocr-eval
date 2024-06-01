@@ -78,6 +78,19 @@ Les programmes Tesseract, SimpleHTR et Keras prennent 3 paramètres en entrée a
 
 ### Tesseract
 
+Ce programme prends 3 paramètres obligatoires et 2 optionnels pour fonctionner. Placez vous dans le répertoire `src/tesseract` puis exécutez la commande suivante :
+
+**`./csv_prediction paths_file labels_file csv_output <psm_mode> <model>`**
+
+Arguments obligatoires :
+- **paths_file** : le chemin d'accès vers le fichier contenant l'ensemble des chemins d'accès des images du test
+- **labels_file** : le chemin d'accès vers le fichier contenant l'ensemble des étiquettes (labels) du test
+- **csv_output** : le chemin d'accès vers le fichier de sortie
+
+Arguments optionnels :
+- **psm_mode** : mode de segmentation des pages de tesseract (par défaut mode 10). Pour un détail des modes exécutez la commande `tesseract --help-psm`.
+- **model** : modèle de reconnaissance utilisé (par défaut 'fra'), des modèles entrainé en fine-tuning pendant le B.E sont disponibles dans le dossier `src/tesseract` au format *.traineddata*.
+
 ### SimpleHTR
 
 Ce programme prends 4 paramètres obligatoires (dont les 3 paramètres cités en introduction de cette partie) pour fonctionner. Placez vous dans le répertoire `src/simple-htr/SimpleHTR/src` puis exécutez la commande suivante :
