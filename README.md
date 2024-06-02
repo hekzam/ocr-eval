@@ -136,7 +136,7 @@ Les arguments :
 - **fichier_liste_des_chemins** : le chemin d'accès vers le fichier contenant l'ensemble des chemins d'accès des images du test
 - **fichier_des_labels** : le chemin d'accès vers le fichier contenant l'ensemble des étiquettes (labels) du test
 - **nom_fichier_csv** : le chemin d'accès vers le fichier de sortie
-- **nom_de_model** : (optionel) le chemin du modele qui doit réaliser les prédictions
+- **nom_de_model** : (optionnel) le chemin du modele qui doit réaliser les prédictions
 
 **nom_de_model** a par défaut un chemin qui peut ne pas être cohérent avec votre arborescence : *model.h5*
 
@@ -147,8 +147,8 @@ Les arguments :
 - **chemin du repertoire d'entrainement** : le chemin du répertoire utilisé pour entrainer le model, le répertoire doit être organisé et le élèment trier par classe comme ceci : repertoire/classeA/...
   																							    /classeB/...
 - **nom du model** : designe le nom du modele keras
-- **taille x** : (optionel) taille en largeur de l'image, par default la valeur 47 qui represente la largeur des images du dataset custom
-- **taille y** : (optionel) taille en longeur de l'image, par default la valeur 63 qui represente la longueur des images du dataset custom
+- **taille x** : (optionnel) taille en largeur de l'image, par default la valeur 47 qui represente la largeur des images du dataset custom
+- **taille y** : (optionnel) taille en longeur de l'image, par default la valeur 63 qui represente la longueur des images du dataset custom
 
 ### Generate Plots
 
