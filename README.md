@@ -129,7 +129,9 @@ Les arguments ont des valeurs par défaut qui peuvent ne pas être cohérentes a
 ### Keras
 
 Pour entraîner un modele keras : 
+
 Le programme prend 3 paramètre obligatoire et 1 optionel : 
+
 **`python keras_outcsv.py <fichier liste des chemins> <fichier des labels> <nom fichier csv> <(optionnel) nom de modele default = model.h5>`**
 
 Les arguments : 
@@ -141,9 +143,13 @@ Les arguments :
 **nom_de_model** a par défaut un chemin qui peut ne pas être cohérent avec votre arborescence : *model.h5*
 
 Pour créer un modèle keras : 
+
 Le programme 'creation_model prend 2 paramètre obligatoire et 2 parametre optionnel : 
+
 **`python keras_outcsv.py <chemin du repertoire d'entrainement>  <nom du model > <(optionnel) taille x default = 47>  <(optionnel) taille y default = 63>`**
+
 Les arguments : 
+
 - **chemin du repertoire d'entrainement** : le chemin du répertoire utilisé pour entrainer le model, le répertoire doit être organisé et le élèment trier par classe comme ceci : repertoire/classeA/...
   																							    /classeB/...
 - **nom du model** : designe le nom du modele keras
