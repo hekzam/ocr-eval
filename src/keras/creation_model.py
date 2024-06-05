@@ -109,7 +109,7 @@ num_classes = y_train.shape[1]
 #Création du réseau de neurone
 model = neural_network()
 model.summary()
-model.fit(x_train, y_train, validation_data=(x_test, y_test), epochs=25, batch_size=100)#98.36%
+model.fit(x_train, y_train, validation_data=(x_test, y_test), epochs=25, batch_size=100)
 
 #affichage de l'évaluation du model
 scores = model.evaluate(x_test, y_test)
